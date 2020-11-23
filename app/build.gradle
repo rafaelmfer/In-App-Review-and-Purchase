@@ -10,7 +10,7 @@ android {
 
     def versionMajor = 1
     def versionMinor = 0
-    def versionPatch = 1
+    def versionPatch = 3
 
     defaultConfig {
         applicationId "com.rafaelmfer.inappreviewandpurchase"
@@ -53,6 +53,10 @@ dependencies {
     def billing_version = "3.0.1"
     implementation "com.android.billingclient:billing:$billing_version"
     implementation "com.android.billingclient:billing-ktx:$billing_version"
+
+    implementation 'com.vanniktech:rxbilling-aidl:0.4.0'
+    implementation 'com.vanniktech:rxbilling-google-play-library:0.4.0'
+    implementation 'com.vanniktech:rxbilling-testing:0.4.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

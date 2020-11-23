@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button_review.setOnClickListener { InAppReviewActivity.startScreen(this@MainActivity) }
+        button_purchase.setOnClickListener { InAppPurchaseActivity.startScreen(this@MainActivity) }
     }
 }
 

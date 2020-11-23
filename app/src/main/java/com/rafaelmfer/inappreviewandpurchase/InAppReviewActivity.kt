@@ -59,7 +59,7 @@ class InAppReviewActivity : AppCompatActivity() {
         request.addOnCompleteListener { request ->
             if (request.isSuccessful) {
                 reviewInfo = request.result
-                Log.d("REVIEW_SUCCESS", request.exception.message.toString())
+                Log.d("REVIEW_SUCCESS", request.result.toString())
             } else {
                 Log.d("REVIEW_ERROR", request.exception.message.toString())
             }

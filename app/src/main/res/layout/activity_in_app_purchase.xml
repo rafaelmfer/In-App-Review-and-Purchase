@@ -7,11 +7,11 @@
     tools:context=".InAppPurchaseActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_load_products_test"
+        android:id="@+id/button_load_products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Load Test"
+        android:text="Load Produto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,42 +24,72 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/product_two"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_load_products_test"
-        tools:text="Assinar Basico" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_load_products"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Load"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_one" />
+        app:layout_constraintTop_toBottomOf="@id/button_load_products"
+        tools:text="Produto Basico" />
 
     <TextView
         android:id="@+id/product_two"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/product_one"
+        app:layout_constraintTop_toTopOf="@id/product_one"
+        tools:text="Produto Premium" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_load_subscriptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Load Assinatura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_one" />
+
+    <TextView
+        android:id="@+id/subscription_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:text="Assinaturas Abaixo:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_load_products"
-        tools:text="Assinar Premium" />
+        app:layout_constraintTop_toBottomOf="@id/button_load_subscriptions" />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/products"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/button_load_products" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subscriptions_recycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subscription_title"
+        tools:listitem="@layout/item_subscription"
+        tools:itemCount="2"/>
+
+    <TextView
+        android:id="@+id/subscription_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subscriptions_recycler"
+        tools:text="Compra Feita com Sucesso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
